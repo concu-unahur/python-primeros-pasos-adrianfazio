@@ -9,4 +9,4 @@ class Contador:
     self.fin = time.perf_counter()
 
   def imprimir(self):
-    logging.info(f'Pasaron {round(self.fin - self.inicio, 2)} segundos')
+    logging.info(f'Pasaron {round(self.fin - self.inicio, 10)} segundos')
