@@ -32,7 +32,7 @@ def bajar_imagen(img_url):
     img_name = f'{img_name}.jpg'
     with open(img_name, 'wb') as img_file:
         img_file.write(img_bytes)
-        # print(f'{img_name} fue bajada...')
+        print(f'{img_name} fue bajada...')
 
 
 tiempo = Contador()
@@ -49,3 +49,11 @@ tiempo.imprimir()
 
 
 # Pero ahora con threads
+
+threads = []
+# create 10 threads, append them to our array of threads
+# and start them off
+for i in range(15):
+    thread = threading.Thread(target=bajar_imagen, args=(i,))
+    threads.append(thread)
+    thread.start()
